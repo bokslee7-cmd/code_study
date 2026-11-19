@@ -1,0 +1,30 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+mypy_path = "."
+explicit_package_bases = true
+
+[[tool.mypy.overrides]]
+module = "pygments.*"
+ignore_missing_imports = true  # types-Pygments is not a project dependency
+
+[[tool.mypy.overrides]]
+module = "google.generativeai.*"
+ignore_missing_imports = true  # google-generativeai 0.3.0 ships no type information
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+pythonpath = ["."]
