@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Build / test output
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Environment (keep examples)
+.env
+.env.*
+!.env.example
+*.local
+
+# Uploaded code files
+storage/uploads/
+
+# Logs / OS / editor
+*.log
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.idea/
